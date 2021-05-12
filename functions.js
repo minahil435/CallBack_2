@@ -88,7 +88,11 @@ const uniq = function (array) {
 
 const reduce = function (collection, iterator, accumulator) {
   let sum = 0
- 
+  
+  if (accumulator >= 0) {
+    sum = accumulator
+  }
+
   each(collection, function (element,i) {
     if (accumulator >= 0 ){
       sum =  iterator(sum , element)
